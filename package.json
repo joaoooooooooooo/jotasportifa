@@ -1,0 +1,21 @@
+{
+  "name": "ew-hero-3-manipulation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "gsap": "^3.11.2",
+    "jquery": "3.5.1",
+    "matter-js": "^0.14.2",
+    "src": "^1.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}

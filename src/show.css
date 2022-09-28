@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "supply";
+  src: url(../fonts/NeutralFace.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "supply";
+
+  background-color: black;
+  text-transform: uppercase;
+
+
+}
+
+main {
+  position: absolute;
+
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.contain {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 100px 2vw;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wel {
+  color: #ffa600;
+}
+
+.header {
+  color: #d4d3d3;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 4vw;
+
+
+}
+
+img {
+  width: 100%;
+
+}

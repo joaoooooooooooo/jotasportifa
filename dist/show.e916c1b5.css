@@ -45,14 +45,16 @@ main {
 
 .header {
   color: #d4d3d3;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 30px;
+  margin-left: 25px;
   font-size: 4vw;
+
 
 
 }
 
 img {
+  border-radius: 5%;
   width: 100%;
 
 }

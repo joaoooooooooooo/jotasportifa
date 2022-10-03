@@ -71,7 +71,7 @@ var monique = Bodies.rectangle(
   {
     density: 0.001,
     friction: 1,
-    frictionAir: 0,
+    frictionAir: 0.07,
     restitution: 0,
     render: {
       sprite: {
@@ -94,7 +94,7 @@ var ethan = Bodies.rectangle(
 
     density: 0.001,
     friction: 1,
-    frictionAir: 0,
+    frictionAir: 0.07,
     restitution: 0,
     render: {
       sprite: {
@@ -133,35 +133,11 @@ var ball1 = Bodies.rectangle(
 
     density: 0.001,
     friction: 1,
-    frictionAir: 0,
+    frictionAir: 0.07,
     restitution: 0,
     render: {
       sprite: {
         texture: T,
-        xScale: (percentY(15) + percentX(6)) / 800,
-        yScale: (percentY(15) + percentX(6)) / 800,
-
-      }
-
-    }
-  }
-);
-
-
-var ball2 = Bodies.rectangle(
-  percentX(35),
-  -percentY(75),
-  percentY(10) + percentX(3),
-  percentY(20) + percentX(3),
-  {
-
-    density: 0.001,
-    friction: 1,
-    frictionAir: 0,
-    restitution: 0,
-    render: {
-      sprite: {
-        texture: B,
         xScale: (percentY(15) + percentX(6)) / 800,
         yScale: (percentY(15) + percentX(6)) / 800,
 
@@ -180,7 +156,7 @@ var milk = Bodies.rectangle(
 
     density: 0.001,
     friction: 1,
-    frictionAir: 0,
+    frictionAir: 0.07,
     restitution: 0,
     render: {
       sprite: {
@@ -201,14 +177,14 @@ var ceiling = Bodies.rectangle(
   percentY(800),
   {
     isStatic: true,
-    render: { fillStyle: "blue" }
+    render: { fillStyle: "" }
   }
 );
 
 var wallOptions = {
   isStatic: true,
   render: {
-    fillStyle: "pink"
+    fillStyle: ""
   }
 };
 
@@ -232,9 +208,7 @@ World.add(world, [
   milk,
   monique,
   ball1,
-  ball2,
   ethan,
-
   drawer,
   ceiling
 ]);
@@ -245,7 +219,7 @@ function moveCeiling() {
   Body.setPosition(ceiling, { x: percentX(50), y: -percentY(400) });
   console.log(ceiling.position);
 }
-setTimeout(moveCeiling, 2000);
+setTimeout(moveCeiling, 3000);
 
 var mouse = Mouse.create(render.canvas);
 var mouseConstraint = MouseConstraint.create(engine, {
@@ -301,6 +275,21 @@ function countUp(max, time) {
 }
 
 document.getElementById("menu_button").onclick = () => {
+  if (drawer.position.x === percentX(125)) {
+    menuOpen();
+    countUp(53, 500); // count up to 53.13 in 1000ms
+    Body.setPosition(ceiling, { x: percentX(50), y: -percentY(600) });
+  } else if (
+    drawer.position.x ===
+    percentX(125) * Math.cos(53 * (Math.PI / 180))
+  ) {
+    menuOpen();
+    Body.setPosition(drawer, { x: percentX(125), y: percentY(50) });
+    setTimeout(moveCeiling, 2000);
+  }
+};
+
+document.getElementById("close").onclick = () => {
   if (drawer.position.x === percentX(125)) {
     menuOpen();
     countUp(53, 500); // count up to 53.13 in 1000ms

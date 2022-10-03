@@ -10635,7 +10635,7 @@ var wordSize = 80;
 var monique = Bodies.rectangle(percentX(25), -percentY(75), percentY(15) + percentX(6), percentY(15) + percentX(6), {
   density: 0.001,
   friction: 1,
-  frictionAir: 0,
+  frictionAir: 0.07,
   restitution: 0,
   render: {
     sprite: {
@@ -10648,7 +10648,7 @@ var monique = Bodies.rectangle(percentX(25), -percentY(75), percentY(15) + perce
 var ethan = Bodies.rectangle(percentX(25), -percentY(75), percentY(20) + percentX(3), percentY(20) + percentX(3), {
   density: 0.001,
   friction: 1,
-  frictionAir: 0,
+  frictionAir: 0.07,
   restitution: 0,
   render: {
     sprite: {
@@ -10670,7 +10670,7 @@ var drawer = Bodies.rectangle(percentX(125), percentY(50), percentX(50), percent
 var ball1 = Bodies.rectangle(percentX(55), -percentY(75), percentY(20) + percentX(3), percentY(20) + percentX(3), {
   density: 0.001,
   friction: 1,
-  frictionAir: 0,
+  frictionAir: 0.07,
   restitution: 0,
   render: {
     sprite: {
@@ -10680,23 +10680,10 @@ var ball1 = Bodies.rectangle(percentX(55), -percentY(75), percentY(20) + percent
     }
   }
 });
-var ball2 = Bodies.rectangle(percentX(35), -percentY(75), percentY(10) + percentX(3), percentY(20) + percentX(3), {
-  density: 0.001,
-  friction: 1,
-  frictionAir: 0,
-  restitution: 0,
-  render: {
-    sprite: {
-      texture: _box.default,
-      xScale: (percentY(15) + percentX(6)) / 800,
-      yScale: (percentY(15) + percentX(6)) / 800
-    }
-  }
-});
 var milk = Bodies.rectangle(percentX(75), -percentY(75), percentY(20) + percentX(3), percentY(20) + percentX(3), {
   density: 0.001,
   friction: 1,
-  frictionAir: 0,
+  frictionAir: 0.07,
   restitution: 0,
   render: {
     sprite: {
@@ -10710,19 +10697,19 @@ var milk = Bodies.rectangle(percentX(75), -percentY(75), percentY(20) + percentX
 var ceiling = Bodies.rectangle(percentX(50), -percentY(1400), percentX(800), percentY(800), {
   isStatic: true,
   render: {
-    fillStyle: "blue"
+    fillStyle: ""
   }
 });
 var wallOptions = {
   isStatic: true,
   render: {
-    fillStyle: "pink"
+    fillStyle: ""
   }
 };
 
 _matterJs.World.add(world, [//Left
 Bodies.rectangle(-percentX(400), percentY(50), percentX(800), percentY(800), wallOptions), //Floor
-Bodies.rectangle(percentX(50), percentY(500), percentX(800), percentY(800), wallOptions), milk, monique, ball1, ball2, ethan, drawer, ceiling]); //Move ceiling to 100vh after bodies fall into view
+Bodies.rectangle(percentX(50), percentY(500), percentX(800), percentY(800), wallOptions), milk, monique, ball1, ethan, drawer, ceiling]); //Move ceiling to 100vh after bodies fall into view
 
 
 console.log(ceiling.position);
@@ -10735,7 +10722,7 @@ function moveCeiling() {
   console.log(ceiling.position);
 }
 
-setTimeout(moveCeiling, 2000);
+setTimeout(moveCeiling, 3000);
 var mouse = Mouse.create(render.canvas);
 var mouseConstraint = MouseConstraint.create(engine, {
   mouse: mouse,
@@ -10813,6 +10800,25 @@ document.getElementById("menu_button").onclick = function () {
     setTimeout(moveCeiling, 2000);
   }
 };
+
+document.getElementById("close").onclick = function () {
+  if (drawer.position.x === percentX(125)) {
+    menuOpen();
+    countUp(53, 500); // count up to 53.13 in 1000ms
+
+    Body.setPosition(ceiling, {
+      x: percentX(50),
+      y: -percentY(600)
+    });
+  } else if (drawer.position.x === percentX(125) * Math.cos(53 * (Math.PI / 180))) {
+    menuOpen();
+    Body.setPosition(drawer, {
+      x: percentX(125),
+      y: percentY(50)
+    });
+    setTimeout(moveCeiling, 2000);
+  }
+};
 },{"matter-js":"node_modules/matter-js/build/matter.js","./styles.css":"src/styles.css","./cavalete.png":"src/cavalete.png","./hand.png":"src/hand.png","./hand2.png":"src/hand2.png","./box.png":"src/box.png"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -10841,7 +10847,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57312" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55878" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

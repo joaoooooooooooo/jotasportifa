@@ -6348,7 +6348,9 @@ document.addEventListener('mousemove', function (e) {
   _gsap.default.to('#cursor', {
     x: e.clientX,
     y: e.clientY,
-    duration: .5
+    duration: .5,
+    xPercent: -50,
+    yPercent: -50
   });
 });
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -6379,7 +6381,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57312" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62675" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

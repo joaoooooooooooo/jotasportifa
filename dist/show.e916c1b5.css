@@ -8,11 +8,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "supply";
+  font-weight: 400;
 
   background-color: black;
-  text-transform: uppercase;
+  text-decoration: none !important;
 
 
+}
+
+a {
+  color: #ffa600;
 }
 
 main {

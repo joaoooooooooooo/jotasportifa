@@ -63,8 +63,8 @@ var wordSize = 80; {
 }
 
 var monique = Bodies.rectangle(
-  percentX(25),
-  -percentY(75),
+  percentX(1),
+  -percentY(-60),
   percentY(15) + percentX(6),
   percentY(15) + percentX(6),
 
@@ -87,7 +87,7 @@ var monique = Bodies.rectangle(
 
 var ethan = Bodies.rectangle(
   percentX(25),
-  -percentY(75),
+  -percentY(-60),
   percentY(20) + percentX(3),
   percentY(20) + percentX(3),
   {
@@ -126,7 +126,7 @@ var drawer = Bodies.rectangle(
 
 var ball1 = Bodies.rectangle(
   percentX(55),
-  -percentY(75),
+  -percentY(-60),
   percentY(20) + percentX(3),
   percentY(20) + percentX(3),
   {
@@ -149,14 +149,14 @@ var ball1 = Bodies.rectangle(
 
 var milk = Bodies.rectangle(
   percentX(75),
-  -percentY(75),
+  -percentY(-60),
   percentY(20) + percentX(3),
   percentY(20) + percentX(3),
   {
 
     density: 0.001,
     friction: 1,
-    frictionAir: 0.07,
+    frictionAir: 0.04,
     restitution: 0,
     render: {
       sprite: {
@@ -219,7 +219,7 @@ function moveCeiling() {
   Body.setPosition(ceiling, { x: percentX(50), y: -percentY(400) });
   console.log(ceiling.position);
 }
-setTimeout(moveCeiling, 3000);
+setTimeout(moveCeiling, 5000);
 
 var mouse = Mouse.create(render.canvas);
 var mouseConstraint = MouseConstraint.create(engine, {

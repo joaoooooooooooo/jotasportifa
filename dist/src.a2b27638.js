@@ -10632,7 +10632,7 @@ engine.velocityIterations = 100; //
 
 var wordSize = 80;
 {}
-var monique = Bodies.rectangle(percentX(25), -percentY(75), percentY(15) + percentX(6), percentY(15) + percentX(6), {
+var monique = Bodies.rectangle(percentX(1), -percentY(-60), percentY(15) + percentX(6), percentY(15) + percentX(6), {
   density: 0.001,
   friction: 1,
   frictionAir: 0.07,
@@ -10645,7 +10645,7 @@ var monique = Bodies.rectangle(percentX(25), -percentY(75), percentY(15) + perce
     }
   }
 });
-var ethan = Bodies.rectangle(percentX(25), -percentY(75), percentY(20) + percentX(3), percentY(20) + percentX(3), {
+var ethan = Bodies.rectangle(percentX(25), -percentY(-60), percentY(20) + percentX(3), percentY(20) + percentX(3), {
   density: 0.001,
   friction: 1,
   frictionAir: 0.07,
@@ -10667,7 +10667,7 @@ var drawer = Bodies.rectangle(percentX(125), percentY(50), percentX(50), percent
     fillStyle: "transparent"
   }
 });
-var ball1 = Bodies.rectangle(percentX(55), -percentY(75), percentY(20) + percentX(3), percentY(20) + percentX(3), {
+var ball1 = Bodies.rectangle(percentX(55), -percentY(-60), percentY(20) + percentX(3), percentY(20) + percentX(3), {
   density: 0.001,
   friction: 1,
   frictionAir: 0.07,
@@ -10680,10 +10680,10 @@ var ball1 = Bodies.rectangle(percentX(55), -percentY(75), percentY(20) + percent
     }
   }
 });
-var milk = Bodies.rectangle(percentX(75), -percentY(75), percentY(20) + percentX(3), percentY(20) + percentX(3), {
+var milk = Bodies.rectangle(percentX(75), -percentY(-60), percentY(20) + percentX(3), percentY(20) + percentX(3), {
   density: 0.001,
   friction: 1,
-  frictionAir: 0.07,
+  frictionAir: 0.04,
   restitution: 0,
   render: {
     sprite: {
@@ -10722,7 +10722,7 @@ function moveCeiling() {
   console.log(ceiling.position);
 }
 
-setTimeout(moveCeiling, 3000);
+setTimeout(moveCeiling, 5000);
 var mouse = Mouse.create(render.canvas);
 var mouseConstraint = MouseConstraint.create(engine, {
   mouse: mouse,
@@ -10847,7 +10847,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55878" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49886" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -43,17 +43,21 @@ html {
   ;
 }
 
-
 a:hover {
   transition: 0.15s;
-  color: #d4d3d3 !important;
+  color: #d4d3d3;
 }
 
 a {
   color: #000000;
 }
 
+.back {
+  color: #d3d3d3;
+}
+
 a:link {
+
   text-decoration: none !important;
 
 }
@@ -62,7 +66,7 @@ p2 {
   cursor: pointer;
   color: rgb(0, 0, 0);
   position: absolute;
-  font-size: 30px;
+  font-size: 50px;
   top: 30px;
   right: 45px;
 }
@@ -288,22 +292,13 @@ li:hover {
 }
 
 footer {
-
-
-
-
   width: 100%;
   padding: 30px;
-
-
   bottom: 0;
   font-size: 1.5vw;
   user-select: none;
   position: fixed;
-
   color: #d3d3d3;
-
-
 }
 
 
@@ -319,7 +314,7 @@ footer {
   }
 
   container {
-    background-color: #ffa600;
+
     height: 100vw;
 
 
@@ -357,6 +352,7 @@ footer {
   .jobs {
 
     color: #d4d3d3;
+
     font-size: 15px;
 
   }

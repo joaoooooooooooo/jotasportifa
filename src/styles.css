@@ -317,6 +317,16 @@ footer {
 
 @media(max-width: 700px) {
 
+
+
+  .sub {
+    width: 70%;
+    margin-left: 35px;
+    margin-top: 30%;
+    color: #d3d3d3;
+    font-size: 15px;
+  }
+
   footer {
     font-size: 12px;
   }

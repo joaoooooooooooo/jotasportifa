@@ -53,7 +53,19 @@ a {
 }
 
 .back {
+  color: #ffa600;
+}
+
+.ig {
+  color: #ffa600;
+}
+
+.sub {
+  width: 50%;
+  margin-left: 35px;
+  margin-top: 30%;
   color: #d3d3d3;
+  font-size: 20px;
 }
 
 a:link {
